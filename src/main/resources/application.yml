@@ -4,3 +4,5 @@ db:
   username: sa
   password:
 
+hibernate:
+  dialect: org.hibernate.dialect.H2Dialect
