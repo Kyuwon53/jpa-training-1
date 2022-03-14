@@ -2,96 +2,59 @@ package jpabook.start;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.UniqueConstraint;
-import java.util.Date;
 
 @Entity
-@Table(name = "MEMBER", uniqueConstraints = {@UniqueConstraint(
-        name = "NAME_AGE_UNOQUE",
-        columnNames = {"NAME", "AGE"}
-)})
 public class Member {
     @Id
-    @Column(name = "ID")
+    @GeneratedValue
+    @Column(name = "MEMBER_ID")
     private String id;
 
-    @Column(name = "NAME", nullable = false, length = 10)
-    private String username;
+    private String name;
 
-    private Integer age;
+    private String city;
+    private String street;
+    private String zipcode;
 
-    @Enumerated(EnumType.STRING)
-    private RoleType roleType;
+    public String getCity() {
+        return city;
+    }
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastModifiedDate;
+    public String getStreet() {
+        return street;
+    }
 
-    @Lob
-    private String description;
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
 
     public String getId() {
         return id;
-    }
-
-    public RoleType getRoleType() {
-        return roleType;
-    }
-
-    public void setRoleType(RoleType roleType) {
-        this.roleType = roleType;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setName(String name) {
+        this.name = name;
     }
 }
