@@ -15,7 +15,7 @@ public class JpaMain {
 
         try {
             tx.begin();
-            logic(em);
+            logicBoard(em);
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
@@ -25,7 +25,7 @@ public class JpaMain {
         emf.close();
     }
 
-    private static void logic(EntityManager em) {
+    private static void logicMeber(EntityManager em) {
         String id = "id";
         Member member = new Member();
         member.setId(id);
@@ -44,5 +44,11 @@ public class JpaMain {
         System.out.println("members.size= " + members.size());
 
         em.remove(member);
+    }
+
+    private static void logicBoard(EntityManager em) {
+        Board board = new Board();
+        em.persist(board);
+        System.out.println("board.id = " + board.getId());
     }
 }
