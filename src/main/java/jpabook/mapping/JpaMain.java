@@ -61,4 +61,9 @@ public class JpaMain {
         Member member = em.find(Member.class, "member1");
         member.setTeam(team2);
     }
+
+    private static void deleteRelation(EntityManager em){
+        Member member1 = em.find(Member.class, "member1");
+        member1.setTeam(null);
+    }
 }
