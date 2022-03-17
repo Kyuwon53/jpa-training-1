@@ -29,15 +29,10 @@ public class JpaMain {
         String id = "id";
         Member member = new Member();
         member.setId(id);
-        member.setUsername("규원");
-        member.setAge(28);
 
         em.persist(member);
 
-        member.setAge(27);
-
         Member findMember = em.find(Member.class, id);
-        System.out.println("findMember= " + findMember.getUsername() + ", age= " + findMember.getAge());
 
         List<Member> members = em.createQuery("select m from Member m", Member.class)
                 .getResultList();
