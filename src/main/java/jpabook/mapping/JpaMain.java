@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -13,7 +14,8 @@ public class JpaMain {
 
         try {
             tx.begin();
-            testSave(em);
+//            testSave(em);
+            queryLogicJoin(em);
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
@@ -23,7 +25,7 @@ public class JpaMain {
         emf.close();
     }
 
-    private static void testSave(EntityManager em){
+    private static void testSave(EntityManager em) {
         Team team1 = new Team("team1", "팀1");
         em.persist(team1);
 
@@ -35,5 +37,20 @@ public class JpaMain {
         member1.setTeam(team1);
         em.persist(member2);
 
+    }
+
+    private static void queryLogicJoin(EntityManager em) {
+        String jpql = "select m " +
+                "from Member m " +
+                "join m.team t " +
+                "where t.name = :teamName";
+
+        List<Member> resultList = em.createQuery(jpql, Member.class)
+                .setParameter("teamName", "팀1")
+                .getResultList();
+
+        for (Member member : resultList) {
+            System.out.println("[query] member.username=" + member.getUsername());
+        }
     }
 }
