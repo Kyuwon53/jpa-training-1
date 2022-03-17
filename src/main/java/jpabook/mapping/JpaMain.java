@@ -75,4 +75,17 @@ public class JpaMain {
             System.out.println("member.username = " + member.getUsername());
         }
     }
+
+    private static void biDirectionSave(EntityManager em) {
+        Team team1 = new Team("team1", "팀1");
+        em.persist(team1);
+
+        Member member1 = new Member("member1", "회원1");
+        member1.setTeam(team1);
+        em.persist(member1);
+
+        Member member2 = new Member("member2", "회원2");
+        member2.setTeam(team1);
+        em.persist(member2);
+    }
 }
