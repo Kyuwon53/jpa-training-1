@@ -54,7 +54,7 @@ public class JpaMain {
         }
     }
 
-    private static void updateRelation(EntityManager em){
+    private static void updateRelation(EntityManager em) {
         Team team2 = new Team("team2", "팀2");
         em.persist(team2);
 
@@ -62,8 +62,17 @@ public class JpaMain {
         member.setTeam(team2);
     }
 
-    private static void deleteRelation(EntityManager em){
+    private static void deleteRelation(EntityManager em) {
         Member member1 = em.find(Member.class, "member1");
         member1.setTeam(null);
+    }
+
+    private static void biDirection(EntityManager em) {
+        Team team = em.find(Team.class, "team1");
+        List<Member> members = team.getMembers();
+
+        for (Member member : members) {
+            System.out.println("member.username = " + member.getUsername());
+        }
     }
 }
