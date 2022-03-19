@@ -1,4 +1,4 @@
-package jpabook.mapping;
+package jpabook.mapping.first;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
