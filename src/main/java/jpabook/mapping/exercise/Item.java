@@ -1,4 +1,4 @@
-package jpabook.mapping_exercise;
+package jpabook.mapping.exercise;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

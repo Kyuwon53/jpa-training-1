@@ -1,4 +1,4 @@
-package jpabook.mapping_veriety;
+package jpabook.mapping.veriety;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

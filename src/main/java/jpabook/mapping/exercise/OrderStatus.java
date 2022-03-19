@@ -1,4 +1,4 @@
-package jpabook.mapping_exercise;
+package jpabook.mapping.exercise;
 
 public enum OrderStatus {
     ORDER, CANCLE
