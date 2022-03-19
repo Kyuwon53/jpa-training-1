@@ -20,12 +20,6 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<Order>();
 
-    public Member(String id, String username, List<Order> orders) {
-        this.id = id;
-        this.username = username;
-        this.orders = orders;
-    }
-
     public String getId() {
         return id;
     }

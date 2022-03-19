@@ -24,13 +24,6 @@ public class Order {
 
     private int orderAmount;
 
-    public Order(Long id, Member member, Product product, int orderAmount) {
-        this.id = id;
-        this.member = member;
-        this.product = product;
-        this.orderAmount = orderAmount;
-    }
-
     public Long getId() {
         return id;
     }
