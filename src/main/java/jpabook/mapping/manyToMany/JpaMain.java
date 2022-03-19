@@ -39,4 +39,16 @@ public class JpaMain {
         order.setOrderAmount(2);
         em.persist(order);
     }
+
+    private static void find(EntityManager em) {
+        Long orderId = 1L;
+        Order order = em.find(Order.class, orderId);
+
+        Member member = order.getMember();
+        Product product = order.getProduct();
+
+        System.out.println("member = " + member.getUsername());
+        System.out.println("product = " + product.getName());
+        System.out.println("orderAmount = " + order.getOrderAmount());
+    }
 }
