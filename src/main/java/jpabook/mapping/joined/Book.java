@@ -1,4 +1,4 @@
-package jpabook.mapping.high;
+package jpabook.mapping.joined;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
