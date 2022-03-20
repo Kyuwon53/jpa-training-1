@@ -10,7 +10,6 @@ import javax.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-@DiscriminatorColumn(name = "DTYPE")
 public abstract class Item {
     @Id
     @GeneratedValue
