@@ -1,4 +1,4 @@
-package jpabook.mapping.exercise;
+package jpabook.exercise;
 
 import javax.persistence.MappedSuperclass;
 import java.util.Date;

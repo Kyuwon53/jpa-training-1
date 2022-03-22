@@ -1,4 +1,4 @@
-package jpabook.mapping.exercise;
+package jpabook.exercise;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
