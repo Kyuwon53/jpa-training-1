@@ -14,6 +14,6 @@ public class Parent {
     @GeneratedValue
     private Long id;
 
-    @OneToMany(mappedBy = "parent", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "parent", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<Child> children = new ArrayList<Child>();
 }
