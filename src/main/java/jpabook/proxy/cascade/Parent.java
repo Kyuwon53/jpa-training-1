@@ -1,5 +1,6 @@
 package jpabook.proxy.cascade;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +14,6 @@ public class Parent {
     @GeneratedValue
     private Long id;
 
-    @OneToMany(mappedBy = "parent")
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.PERSIST)
     private List<Child> children = new ArrayList<Child>();
 }
