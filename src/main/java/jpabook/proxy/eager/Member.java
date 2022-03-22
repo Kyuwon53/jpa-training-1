@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 public class Member {
     private String username;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
