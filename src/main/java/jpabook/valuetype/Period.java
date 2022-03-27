@@ -12,6 +12,9 @@ public class Period {
     @Temporal(TemporalType.DATE)
     Date endDate;
 
+    public Period() {
+    }
+
     public Date getStartDate() {
         return startDate;
     }
@@ -26,10 +29,5 @@ public class Period {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
-    }
-
-    public boolean isWork(Date date) {
-        // 값 타입을 위한 메소드를 정의할 수 있다.
-        return false;
     }
 }
