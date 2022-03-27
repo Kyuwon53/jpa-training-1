@@ -86,4 +86,16 @@ public class Member {
     public void setPhoneNumber(PhoneNumber phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public Address getCompanyAddress() {
+        return companyAddress;
+    }
+
+    public Set<String> getFavoriteFoods() {
+        return favoriteFoods;
+    }
+
+    public List<Address> getAddressHistory() {
+        return addressHistory;
+    }
 }
