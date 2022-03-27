@@ -2,15 +2,26 @@ package jpabook.valuetype;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
 @Embeddable
 public class Address {
     @Column(name = "city")
     private String city;
     private String street;
-    private String zipcode;
+    private String state;
+    @Embedded
+    private Zipcode zipcode;
 
     public Address() {
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getCity() {
@@ -29,11 +40,11 @@ public class Address {
         this.street = street;
     }
 
-    public String getZipcode() {
+    public Zipcode getZipcode() {
         return zipcode;
     }
 
-    public void setZipcode(String zipcode) {
+    public void setZipcode(Zipcode zipcode) {
         this.zipcode = zipcode;
     }
 }
